@@ -3,7 +3,7 @@ require("colors");
 
 const connectDB = async () => {
   try {
-    const url = "mongodb://localhost:27017/pizza_db";
+    const url = "mongodb+srv://sunny:sunny@cluster0.ysn1uyf.mongodb.net/pizzadb?retryWrites=true&w=majority";
     const conn = await mongoose.connect(url, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
