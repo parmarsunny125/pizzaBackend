@@ -6,8 +6,9 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: "https://pizzadelivery.onrender.com",
-  credentials: true
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus:200,
 }))
 
 const connectDB = require("./config/config");
