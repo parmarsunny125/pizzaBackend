@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const path = require("path");
 const cors = require("cors");
 
+const app = express();
+
 app.use(cors({
   origin: "https://pizzadelivery.onrender.com",
   credentials: true
@@ -10,6 +12,7 @@ app.use(cors({
 
 const connectDB = require("./config/config");
 require("colors");
+
 const morgan = require("morgan");
 
 //config dotenv
@@ -18,7 +21,7 @@ dotenv.config();
 //connection mongodb
 connectDB();
 
-const app = express();
+
 
 //middlewares
 app.use(express.json());
