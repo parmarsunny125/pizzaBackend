@@ -1,6 +1,12 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://pizzadelivery.onrender.com",
+  credentials: true
+}))
 
 const connectDB = require("./config/config");
 require("colors");
