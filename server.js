@@ -33,21 +33,21 @@ app.use("/api/pizzas", require("./routes/pizzaRoute"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/orders", require("./routes/orderRoute"));
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "/client/build")));
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-//   });
-// } else {
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+} else {
   app.get("/", (req, res) => {
     res.send("<h1>Hello From Node Server vai nodemon</h1>");
   });
-// }
+}
 
 const port = process.env.PORT || 5000;
-// if(process.env.NODE_ENV=="production"){
-//   app.use(express.static("client/build"))
-// }
+if(process.env.NODE_ENV=="production"){
+  app.use(express.static("client/build"))
+}
 app.listen(port, () => {
     console.log("SERVER RUNNING")
 });
